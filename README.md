@@ -1,6 +1,6 @@
 # @kessler/gemma
 
-Run Google's Gemma 4 models entirely on-device from Node.js. Text, image, and audio in — text out. No API keys, no cloud, no network required after the initial model download.
+Run Google's Gemma 4 models entirely on-device, embedded in a Node.js process. Text, image, and audio in — text out. No API keys, no cloud, no network required after the initial model download.
 
 Built on [`@huggingface/transformers`](https://github.com/huggingface/transformers.js) + ONNX Runtime. Ships with a built-in agent system for tool-calling workflows.
 
