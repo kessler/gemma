@@ -8,7 +8,7 @@ Built on [`@huggingface/transformers`](https://github.com/huggingface/transforme
 
 - **Fully local** — your data never leaves the machine
 - **Multimodal** — text, image, and audio inputs through one unified API
-- **128K context** — long document understanding out of the box
+- **128K context** — sizeable context window to work with
 - **Agent system** — tool-calling loop with automatic retries and context management
 - **Streaming** — async iterators for real-time output
 - **Thinking mode** — chain-of-thought reasoning when you need it
