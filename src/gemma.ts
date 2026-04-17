@@ -17,7 +17,7 @@ import type {
 } from './types.js'
 import { DEFAULT_MODEL_ID, resolveModelId } from './models.js'
 import { createStreamer, streamToAsyncIterator } from './streaming.js'
-import { extractFinalResponse } from './agent/parser.js'
+import { extractFinalResponse } from '@kessler/gemma-agent'
 
 export class Gemma {
   private model: InstanceType<typeof Gemma4ForConditionalGeneration> | null = null

@@ -1,8 +1,7 @@
 export { Gemma } from './gemma.js'
-export { Agent } from './agent/agent-loop.js'
-export { parseToolCalls, hasToolCalls, extractThinking, extractFinalResponse } from './agent/parser.js'
-export { tokenize } from './agent/lexer.js'
-export type { Token, TokenType } from './agent/lexer.js'
+
+export { Agent, parseToolCalls, hasToolCalls, extractThinking, extractFinalResponse, tokenize, buildPrompt, appendToolCallAndResponse } from '@kessler/gemma-agent'
+export type { Token, TokenType, ModelBackend, GenerateOptions, Logger, ToolParameterDef, ToolDefinition, ToolCall, ToolResponse, AgentOptions, AgentRunResult, ConversationMessage } from '@kessler/gemma-agent'
 
 export type {
   GemmaOptions,
@@ -12,13 +11,6 @@ export type {
   ChatMessage,
   ContentItem,
   ProgressInfo,
-  ToolParameterDef,
-  ToolDefinition,
-  ToolCall,
-  ToolResponse,
-  AgentOptions,
-  AgentRunResult,
-  ConversationMessage,
 } from './types.js'
 
 export { MODELS, DEFAULT_MODEL_ID, resolveModelId } from './models.js'

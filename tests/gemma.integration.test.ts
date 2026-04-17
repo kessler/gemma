@@ -94,7 +94,7 @@ function defineModelTests(modelId: string) {
 
     it('runs agent with tool calls', async () => {
       const agent = new Agent({
-        gemma,
+        model: gemma,
         systemPrompt: 'You are a helpful file assistant.',
         tools: [
           {
