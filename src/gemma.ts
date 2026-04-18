@@ -47,14 +47,19 @@ export class Gemma {
     const { hfModelId, contextLimit } = resolveModelId(this.modelId)
     this.contextLimit = contextLimit
 
-    const fileProgress = new Map<string, number>()
+    const fileProgress = new Map<string, { loaded: number; total: number }>()
     let lastReportedProgress = -1
 
-    const progress_callback = (info: { status: string; file?: string; progress?: number }) => {
+    const progress_callback = (info: { status: string; file?: string; progress?: number; loaded?: number; total?: number }) => {
       if (info.status === 'progress' && info.file != null) {
-        fileProgress.set(info.file, info.progress ?? 0)
-        const values = [...fileProgress.values()]
-        const overall = Math.round(values.reduce((a, b) => a + b, 0) / Math.max(values.length, 1))
+        fileProgress.set(info.file, { loaded: info.loaded ?? 0, total: info.total ?? 0 })
+        let totalBytes = 0
+        let loadedBytes = 0
+        for (const entry of fileProgress.values()) {
+          totalBytes += entry.total
+          loadedBytes += entry.loaded
+        }
+        const overall = totalBytes > 0 ? Math.round((loadedBytes / totalBytes) * 100) : 0
         if (overall !== lastReportedProgress) {
           lastReportedProgress = overall
           this.onProgress?.({ status: 'loading', progress: overall, file: info.file })
