@@ -181,7 +181,7 @@ const gemma = new Gemma({ model: 'gemma-4-e4b' })
 await gemma.load()
 
 const agent = new Agent({
-  gemma,
+  model: gemma,
   systemPrompt: 'You are a helpful file assistant.',
   tools: [
     {
@@ -274,11 +274,12 @@ Cancel an in-progress generation.
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| `gemma` | `Gemma` | — | Loaded Gemma instance (required) |
+| `model` | `ModelBackend` | — | Model backend instance (required) |
 | `systemPrompt` | `string` | — | System prompt (required) |
 | `tools` | `ToolDefinition[]` | — | Available tools (required) |
 | `maxIterations` | `number` | `10` | Max tool-calling loops |
 | `thinking` | `boolean` | `false` | Enable reasoning mode |
+| `logger` | `Logger` | no-op | Optional logger (`debug`, `info`, `warn`, `error`) |
 | `onChunk` | `(text: string) => void` | — | Streaming text callback |
 | `onThinkingChunk` | `(text: string) => void` | — | Streaming thinking callback |
 | `onToolCall` | `(call: ToolCall) => void` | — | Called when a tool is invoked |
