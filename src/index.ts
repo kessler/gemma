@@ -1,7 +1,7 @@
 export { Gemma } from './gemma.js'
 
-export { Agent, parseToolCalls, hasToolCalls, extractThinking, extractFinalResponse, tokenize, buildPrompt, appendToolCallAndResponse } from '@kessler/gemma-agent'
-export type { Token, TokenType, ModelBackend, GenerateOptions, Logger, ToolParameterDef, ToolDefinition, ToolCall, ToolResponse, AgentOptions, AgentRunResult, ConversationMessage } from '@kessler/gemma-agent'
+export { Agent, parseToolCalls, hasToolCalls, extractThinking, extractFinalResponse, tokenize, buildPrompt, appendToolCallAndResponse, image, audio, ToolResultImage, ToolResultAudio } from '@kessler/gemma-agent'
+export type { Token, TokenType, ModelBackend, GenerateOptions, MediaAttachment, ToolResultValue, Logger, ToolParameterDef, ToolDefinition, ToolCall, ToolResponse, AgentOptions, AgentRunResult, ConversationMessage } from '@kessler/gemma-agent'
 
 export type {
   GemmaOptions,

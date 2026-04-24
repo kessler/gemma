@@ -18,6 +18,7 @@ import type {
 import { DEFAULT_MODEL_ID, resolveModelId } from './models.js'
 import { createStreamer, streamToAsyncIterator } from './streaming.js'
 import { extractFinalResponse } from '@kessler/gemma-agent'
+import type { MediaAttachment } from '@kessler/gemma-agent'
 
 export class Gemma {
   private model: InstanceType<typeof Gemma4ForConditionalGeneration> | null = null
@@ -145,13 +146,16 @@ export class Gemma {
    * Low-level generate for agent use. Accepts a raw prompt string with Gemma 4 special tokens.
    * Used by the Agent class for tool-calling prompts.
    */
-  async generateRaw(prompt: string, options?: CompleteOptions & { imageDataUrl?: string }): Promise<string> {
-    return this.generate(
-      prompt,
-      options?.imageDataUrl ? [options.imageDataUrl] : [],
-      [],
-      options,
-    )
+  async generateRaw(prompt: string, options?: CompleteOptions & { media?: MediaAttachment[] }): Promise<string> {
+    const images: string[] = []
+    const audios: string[] = []
+    if (options?.media) {
+      for (const m of options.media) {
+        if (m.type === 'image') images.push(m.content)
+        if (m.type === 'audio') audios.push(m.content)
+      }
+    }
+    return this.generate(prompt, images, audios, options)
   }
 
   // ---- Private ----
