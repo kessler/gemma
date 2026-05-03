@@ -15,8 +15,8 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1
       '@kessler/gemma-agent':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^2.0.1
+        version: 2.0.1
       audio-decode:
         specifier: ^3.8.1
         version: 3.8.1
@@ -391,8 +391,8 @@ packages:
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
 
-  '@kessler/gemma-agent@1.0.0':
-    resolution: {integrity: sha512-b/kBlZbcdiwNaKIM2H9epLelR2uZUgL6kVJM5l8jFNE3BBamI85yqq7iQBlML6SIffyu1NvnK+1ZGOzORX47qw==}
+  '@kessler/gemma-agent@2.0.1':
+    resolution: {integrity: sha512-epu+GAP8+F5IVd7x51qZMnBh2elaHNaj81uJ25MHpQO1vDTcSJGeZYeXZUGIBpmgB96iKnd8vfrMUzBugOLzJQ==}
 
   '@protobufjs/aspromise@1.1.2':
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
@@ -1218,7 +1218,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
-  '@kessler/gemma-agent@1.0.0': {}
+  '@kessler/gemma-agent@2.0.1': {}
 
   '@protobufjs/aspromise@1.1.2': {}
 
